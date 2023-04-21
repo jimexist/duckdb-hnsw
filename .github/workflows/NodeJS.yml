@@ -1,9 +1,11 @@
-#
-# NOTE: if NodeJS tests are unused, deleting this file or disabling the workflow on GitHub will speed up CI
-#
-
 name: NodeJS
-on: [push, pull_request,repository_dispatch]
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref || '' }}-${{ github.base_ref || '' }}-${{ github.ref != 'refs/heads/main' || github.sha }}
   cancel-in-progress: true
