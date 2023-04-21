@@ -6,6 +6,7 @@ set(TARGET_NAME hnsw)
 set(EXTENSION_NAME ${TARGET_NAME}_extension)
 project(${TARGET_NAME})
 include_directories(src/include)
+include_directories(hnswlib/hnswlib)
 
 set(EXTENSION_SOURCES src/hnsw_extension.cpp)
 add_library(${EXTENSION_NAME} STATIC ${EXTENSION_SOURCES})
